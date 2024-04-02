@@ -1,0 +1,6 @@
+{
+    "configuracoes": {
+        "chunk": 100,
+        "overlap_chunk": 20
+    }
+}
