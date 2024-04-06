@@ -8,8 +8,6 @@ class VectorDataBase:
     #Carrega os documentos que foram feitos o Split(divisão), no banco de dados de vetor (vectorDatabase).
     def carrega_documentos_vectorStore(self, documento_dividido):
         self.documento_dividido = documento_dividido
-        vector_store = DocArrayInMemorySearch.from_documents(
-            documento_dividido, embedding = OpenAIEmbeddings()
-        )
+        vector_store = DocArrayInMemorySearch.from_documents(documento_dividido, embedding=OpenAIEmbeddings())
         return vector_store
        

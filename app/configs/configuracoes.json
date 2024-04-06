@@ -2,7 +2,7 @@
     "configuracoes": {
         "chunk_size": 100,
         "overlap_chunk": 20,
-        "token_openAI": "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",
+        "token_openAI": "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",
         "modelo_openAI":"gpt-3.5-turbo",
         "fontes_inputs": {
             "FIAP": {

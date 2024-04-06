@@ -1,4 +1,5 @@
 import pandas as pd
+import csv
 import json
 
 class Arquivo:
@@ -8,10 +9,6 @@ class Arquivo:
     
     def ler_arquivo_CSV(self):
         arquivo_csv = pd.read_csv(f'{self.caminho}{self.nome_arquivo}.csv')
-        lista = []
-        for indice, linha in arquivo_csv.iterrows():
-            lista.append(linha)
-        
-        return linha
+        return arquivo_csv.iterrows()
         
         
