@@ -1,13 +1,27 @@
-import pandas as pd
-import Split as split
+from data.Split import Split as Split
+from data.VectorDataBase import VectorDataBase as vector_database
 
 class Embeddings:
-    
-    def __inti__(self, documentos, chunkSize, chunkOverlap):
+
+    def __init__(self, documentos, chunk_size, chunk_overlap, eh_web_scrapping):
         self.documentos = documentos
-        self.chunkSize = chunkSize
-        self.chunkOverlap = chunkOverlap
-        split = split(documentos)
+        self.chunk_size = chunk_size
+        self.chunk_overlap = chunk_overlap
+        self.eh_web_scrapping = eh_web_scrapping
+
+    
+    def splitting(self):
+        splitter = Split()
+        return splitter.efetua_divisao_documento(self.documentos, self.chunk_size, self.chunk_overlap, self.eh_web_scrapping)
+
+    def vetorizador(self):
+        documento_dividido = self.splitting()
+        vetor = vector_database()
+        store = vetor.carrega_documentos_vectorStore(documento_dividido)
+        print(store)
+
+
+        
 
      
         
