@@ -9,24 +9,30 @@ class Split:
         self.web_scrapping = None  
     
     #metodo efetua o split do documento para enviar ao vectorDB.
-    def efetua_divisao_documento(self, texto_documento,chunk_size, chunk_overlap, eh_web_scrapping = False):
+    def efetua_divisao_documento(self, texto_documento, chunk_size, chunk_overlap, eh_web_scrapping = False):
         self.texto_documento = texto_documento
+        print(texto_documento)
         recursivo_character = RecursiveCharacterTextSplitter(chunk_size, chunk_overlap)
         if eh_web_scrapping:
             loader = WebBaseLoader(texto_documento)
             return loader.load_and_split(recursivo_character)
         else:
-            return texto_documento
-    
-    # def obtem_ambiente_para_split(self):
-    #     configuracao = config()
-    #     json_config = configuracao.obtem_json_configuracao()
-    #     fontes_ativas = {}
-    #     for fonte, detalhes in json_config['fontes_inputs'].items():
-    #         if detalhes['status'] == 'ativo':
-    #             fontes_ativas[fonte] = detalhes
-                
-    #     for fonte, detalhes in fontes_ativas.items():
-    #         self.ambiente = fonte
-    #         self.url = detalhes["URL"]
-    #         self.web_scrapping = detalhes["web_scrapping"]   
+            return self.efetua_divisao_csv(texto_documento)
+        
+    def efetua_divisao_csv(self, documento_csv):
+        lista_documentos = []
+        for linha in documento_csv:
+            idade = int(linha['idade'])
+            genero = linha['gênero']
+            imc = float(linha['imc'])
+            filhos = int(linha['filhos'])
+            fumante = linha['fumante']
+            regiao = linha['região']
+            encargos = float(linha['encargos'])
+        
+            # Criar um documento com os dados
+            documento = f"Idade: {idade}, Gênero: {genero}, IMC: {imc}, Filhos: {filhos}, Fumante: {fumante}, Região: {regiao}, Encargos: {encargos}"
+            lista_documentos.append(documento)
+            
+        return lista_documentos
+            

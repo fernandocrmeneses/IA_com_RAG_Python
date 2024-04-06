@@ -9,7 +9,7 @@
                 "URL": "https://postech.fiap.com.br/curso/ia-para-devs/",
                 "web_scrapping": true,
                 "retorno_formato_json":false,
-                "status":"ativo"
+                "status":"inativo"
             },
             "DATABASE": {
                 "server":"",
@@ -24,7 +24,7 @@
                 "web_scrapping": false,
                 "retorno_formato_json":false,
                 "URL":"",
-                "status":"inativo"
+                "status":"ativo"
             }
         },
         "usarOpenAI": true
