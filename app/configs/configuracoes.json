@@ -5,10 +5,10 @@
         "token_openAI": "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",
         "modelo_openAI":"gpt-3.5-turbo",
         "fontes_inputs": {
-            "FIAP": {
+            "sites": {
                 "URL": "https://postech.fiap.com.br/curso/ia-para-devs/",
                 "web_scrapping": true,
-                "retorno_formato_json":false,
+                "retorno_formato_json": false,
                 "status":"inativo"
             },
             "DATABASE": {

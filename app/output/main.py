@@ -16,7 +16,7 @@ def main():
         embeddings = Embeddings(dados_para_split, config.obtem_chunk_size(), config.obtem_chunk_overlap(), dados_ambiente[2])
         embeddings.vetorizador()
     
-    if dados_ambiente[0] == "FIAP":
+    if dados_ambiente[0] == "sites":
         embeddings = Embeddings(dados_ambiente[1], config.obtem_chunk_size(), config.obtem_chunk_overlap(), dados_ambiente[2])
         embeddings.vetorizador()
 

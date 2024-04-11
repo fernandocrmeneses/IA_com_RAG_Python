@@ -1,5 +1,5 @@
 from data.Split import Split as Split
-from data.VectorDataBase import VectorDataBase as vector_database
+from data.vector_database import VectorDataBase as vector_database
 
 class Embeddings:
 
@@ -10,12 +10,12 @@ class Embeddings:
         self.eh_web_scrapping = eh_web_scrapping
 
     
-    def splitting(self):
+    def dividindo(self):
         splitter = Split()
         return splitter.efetua_divisao_documento(self.documentos, self.chunk_size, self.chunk_overlap, self.eh_web_scrapping)
 
     def vetorizador(self):
-        documento_dividido = self.splitting()
+        documento_dividido = self.dividindo()
         vetor = vector_database()
         store = vetor.carrega_documentos_vectorStore(documento_dividido)
         print(store)
