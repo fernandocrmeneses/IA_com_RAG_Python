@@ -1,7 +1,7 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.text_splitter import MarkdownHeaderTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
-from util.Configuracoes import Configuracoes as config
+from util.configuracoes import Configuracoes as config
 from langchain_core.documents import Document
 
 class Split:
